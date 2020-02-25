@@ -1,0 +1,14 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/jachm/Documents/TEC/Datos II/Extraclase I/Extraclase I Datos II/main.cpp
+stdio.h
+-
+limits.h
+-
+
