@@ -9,6 +9,8 @@
 /home/jachm/Documents/TEC/Datos II/Extraclase I/Extraclase I Datos II/main.cpp
 stdio.h
 -
+stdlib.h
+-
 limits.h
 -
 
