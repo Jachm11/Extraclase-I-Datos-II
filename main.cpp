@@ -5,18 +5,20 @@
 #include <stdlib.h>
 #include <limits.h>
 
+//Puntero no inicializado (PNI)
+
 // A structure to represent a node in adjacency list
 struct AdjListNode
 {
     int dest;
     int weight;
-    struct AdjListNode* next;
+    struct AdjListNode* next; //Puntero (NI) a otro dato de la estructura nodo llamado next
 };
 
 // A structure to represent an adjacency list
 struct AdjList
 {
-    struct AdjListNode *head;  // pointer to head node of list
+    struct AdjListNode* head;  // pointer to head node of list
 };
 
 // A structure to represent a graph. A graph is an array of adjacency lists.
@@ -24,14 +26,13 @@ struct AdjList
 struct Graph
 {
     int V;
-    struct AdjList* array;
+    struct AdjList* array; //PNI a la list. adj.
 };
 
 // A utility function to create a new adjacency list node
 struct AdjListNode* newAdjListNode(int dest, int weight)
 {
-    struct AdjListNode* newNode =
-            (struct AdjListNode*) malloc(sizeof(struct AdjListNode));
+    struct AdjListNode* newNode = (struct AdjListNode*) malloc(sizeof(struct AdjListNode)); // Aloja el espacio en memoria para el nodo, newNode es un puntero
     newNode->dest = dest;
     newNode->weight = weight;
     newNode->next = NULL;
@@ -45,7 +46,7 @@ struct Graph* createGraph(int V)
     graph->V = V;
 
     // Create an array of adjacency lists.  Size of array will be V
-    graph->array = (struct AdjList*) malloc(V * sizeof(struct AdjList));
+    graph->array = (struct AdjList*) malloc(V * sizeof(struct AdjList)); // Al array se le asigna un espacio en memoria de tipo AdjList x 9
 
     // Initialize each adjacency list as empty by making head as NULL
     for (int i = 0; i < V; ++i)
@@ -57,17 +58,25 @@ struct Graph* createGraph(int V)
 // Adds an edge to an undirected graph
 void addEdge(struct Graph* graph, int src, int dest, int weight)
 {
+
+    //AGREGA LA RELACION EN LA LISTA DEL SRC CON EL DEST
+
     // Add an edge from src to dest.  A new node is added to the adjacency
     // list of src.  The node is added at the beginning
     struct AdjListNode* newNode = newAdjListNode(dest, weight);
     newNode->next = graph->array[src].head;
     graph->array[src].head = newNode;
 
+    //AGREGA LA RELACION EN LA LISTA DEL DEST CON EL SRC
+
     // Since graph is undirected, add an edge from dest to src also
     newNode = newAdjListNode(src, weight);
     newNode->next = graph->array[dest].head;
     graph->array[dest].head = newNode;
 }
+
+//                       _________________________________
+//______________________/ Estructuras para el Heap
 
 // Structure to represent a min heap node
 struct MinHeapNode
@@ -82,14 +91,13 @@ struct MinHeap
     int size;      // Number of heap nodes present currently
     int capacity;  // Capacity of min heap
     int *pos;     // This is needed for decreaseKey()
-    struct MinHeapNode **array;
+    struct MinHeapNode **array; // aqui se crea un puntero a un puntero q apunta a un MinHeapNode
 };
 
 // A utility function to create a new Min Heap Node
 struct MinHeapNode* newMinHeapNode(int v, int dist)
 {
-    struct MinHeapNode* minHeapNode =
-            (struct MinHeapNode*) malloc(sizeof(struct MinHeapNode));
+    struct MinHeapNode* minHeapNode = (struct MinHeapNode*) malloc(sizeof(struct MinHeapNode));
     minHeapNode->v = v;
     minHeapNode->dist = dist;
     return minHeapNode;
@@ -98,13 +106,11 @@ struct MinHeapNode* newMinHeapNode(int v, int dist)
 // A utility function to create a Min Heap
 struct MinHeap* createMinHeap(int capacity)
 {
-    struct MinHeap* minHeap =
-            (struct MinHeap*) malloc(sizeof(struct MinHeap));
+    struct MinHeap* minHeap = (struct MinHeap*) malloc(sizeof(struct MinHeap));
     minHeap->pos = (int *)malloc(capacity * sizeof(int));
     minHeap->size = 0;
     minHeap->capacity = capacity;
-    minHeap->array =
-            (struct MinHeapNode**) malloc(capacity * sizeof(struct MinHeapNode*));
+    minHeap->array =(struct MinHeapNode**) malloc(capacity * sizeof(struct MinHeapNode*));
     return minHeap;
 }
 
@@ -181,7 +187,7 @@ struct MinHeapNode* extractMin(struct MinHeap* minHeap)
     return root;
 }
 
-// Function to decreasy dist value of a given vertex v. This function
+// Function to decrease dist value of a given vertex v. This function
 // uses pos[] of min heap to get the current index of node in min heap
 void decreaseKey(struct MinHeap* minHeap, int v, int dist)
 {
@@ -214,6 +220,10 @@ bool isInMinHeap(struct MinHeap *minHeap, int v)
     return false;
 }
 
+
+//             _________________
+//____________/Dijkstra y otros
+
 // A utility function used to print the solution
 void printArr(int dist[], int n)
 {
@@ -221,6 +231,8 @@ void printArr(int dist[], int n)
     for (int i = 0; i < n; ++i)
         printf("%d \t\t %d\n", i, dist[i]);
 }
+
+
 
 // The main function that calulates distances of shortest paths from src to all
 // vertices. It is a O(ELogV) function
