@@ -224,12 +224,31 @@ bool isInMinHeap(struct MinHeap *minHeap, int v)
 //             _________________
 //____________/Dijkstra y otros
 
-// A utility function used to print the solution
-void printArr(int dist[], int n)
+
+// Function to print shortest
+// path from source to j
+// using parent array
+void printPath(int parent[], int j)
 {
-    printf("Vertex   Distance from Source\n");
+
+    // Base Case : If j is source
+    if (parent[j] == - 1)
+        return;
+
+    printPath(parent, parent[j]);
+
+    printf("%d ", j);
+}
+
+// A utility function used to print the solution
+void printArr(int dist[], int n, int parent[], int src)
+{
+    printf("Vertex\t   Distance\t Path");
     for (int i = 0; i < n; ++i)
-        printf("%d \t\t %d\n", i, dist[i]);
+    {
+        printf("\n%d -> %d \t\t %d\t\t%d ", src, i, dist[i], src);
+        printPath(parent, i);
+    }
 }
 
 
@@ -240,16 +259,18 @@ void dijkstra(struct Graph* graph, int src)
 {
     int V = graph->V;// Get the number of vertices in graph
     int dist[V];      // dist values used to pick minimum weight edge in cut
+    int parent[V];
 
     // minHeap represents set E
     struct MinHeap* minHeap = createMinHeap(V);
 
     // Initialize min heap with all vertices. dist value of all vertices
-    for (int v = 0; v < V; ++v)
+    for (int i = 0; i < V; ++i)
     {
-        dist[v] = INT_MAX;
-        minHeap->array[v] = newMinHeapNode(v, dist[v]);
-        minHeap->pos[v] = v;
+        dist[i] = INT_MAX;
+        minHeap->array[i] = newMinHeapNode(i, dist[i]);
+        minHeap->pos[i] = i;
+        parent[i] = -1;
     }
 
     // Make dist value of src vertex as 0 so that it is extracted first
@@ -261,7 +282,7 @@ void dijkstra(struct Graph* graph, int src)
     // Initially size of min heap is equal to V
     minHeap->size = V;
 
-    // In the followin loop, min heap contains all nodes
+    // In the following loop, min heap contains all nodes
     // whose shortest distance is not yet finalized.
     while (!isEmpty(minHeap))
     {
@@ -282,6 +303,7 @@ void dijkstra(struct Graph* graph, int src)
                 pCrawl->weight + dist[u] < dist[v])
             {
                 dist[v] = dist[u] + pCrawl->weight;
+                parent[v] = u;
 
                 // update distance value in min heap also
                 decreaseKey(minHeap, v, dist[v]);
@@ -291,7 +313,7 @@ void dijkstra(struct Graph* graph, int src)
     }
 
     // print the calculated shortest distances
-    printArr(dist, V);
+    printArr(dist, V, parent,src);
 }
 
 
@@ -316,7 +338,7 @@ int main()
     addEdge(graph, 6, 8, 6);
     addEdge(graph, 7, 8, 7);
 
-    dijkstra(graph, 0);
+    dijkstra(graph, 1);
 
     return 0;
 }

@@ -55,8 +55,7 @@ int printSolution(int dist[], int n,
     printf("Vertex\t Distance\tPath");
     for (int i = 0; i < V; i++)
     {
-        printf("\n%d -> %d \t\t %d\t\t%d ",
-               src, i, dist[i], src);
+        printf("\n%d -> %d \t\t %d\t\t%d ", src, i, dist[i], src);
         printPath(parent, i);
     }
 }
