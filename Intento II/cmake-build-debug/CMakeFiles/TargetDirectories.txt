@@ -1,0 +1,3 @@
+/home/jachm/Documents/TEC/Datos II/Extraclase I/Intento II/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/jachm/Documents/TEC/Datos II/Extraclase I/Intento II/cmake-build-debug/CMakeFiles/Intento_II.dir
+/home/jachm/Documents/TEC/Datos II/Extraclase I/Intento II/cmake-build-debug/CMakeFiles/edit_cache.dir
