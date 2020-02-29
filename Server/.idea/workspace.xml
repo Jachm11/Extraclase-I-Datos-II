@@ -21,7 +21,11 @@
     <option name="formatViaClangd" value="false" />
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
   <component name="ProjectId" id="1YUadQuVDislFpQ0xReyWuwjFZa" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -30,6 +34,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -55,6 +60,7 @@
       <option name="presentableId" value="Default" />
       <updated>1582999713240</updated>
       <workItem from="1582999714837" duration="4576000" />
+      <workItem from="1583010423754" duration="3029000" />
     </task>
     <servers />
   </component>
@@ -62,21 +68,21 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="871" height="269" key="GridCell.Tab.0.bottom" timestamp="1583007364367">
+    <state width="881" height="181" key="GridCell.Tab.0.bottom" timestamp="1583013976249">
       <screen x="70" y="27" width="1850" height="1053" />
     </state>
-    <state width="871" height="269" key="GridCell.Tab.0.bottom/70.27.1850.1053/1920.0.1920.1080@70.27.1850.1053" timestamp="1583007364367" />
-    <state width="871" height="269" key="GridCell.Tab.0.center" timestamp="1583007364367">
+    <state width="881" height="181" key="GridCell.Tab.0.bottom/70.27.1850.1053/1920.0.1920.1080@70.27.1850.1053" timestamp="1583013976249" />
+    <state width="881" height="181" key="GridCell.Tab.0.center" timestamp="1583013976249">
       <screen x="70" y="27" width="1850" height="1053" />
     </state>
-    <state width="871" height="269" key="GridCell.Tab.0.center/70.27.1850.1053/1920.0.1920.1080@70.27.1850.1053" timestamp="1583007364367" />
-    <state width="871" height="269" key="GridCell.Tab.0.left" timestamp="1583007364367">
+    <state width="881" height="181" key="GridCell.Tab.0.center/70.27.1850.1053/1920.0.1920.1080@70.27.1850.1053" timestamp="1583013976249" />
+    <state width="881" height="181" key="GridCell.Tab.0.left" timestamp="1583013976249">
       <screen x="70" y="27" width="1850" height="1053" />
     </state>
-    <state width="871" height="269" key="GridCell.Tab.0.left/70.27.1850.1053/1920.0.1920.1080@70.27.1850.1053" timestamp="1583007364367" />
-    <state width="871" height="269" key="GridCell.Tab.0.right" timestamp="1583007364367">
+    <state width="881" height="181" key="GridCell.Tab.0.left/70.27.1850.1053/1920.0.1920.1080@70.27.1850.1053" timestamp="1583013976249" />
+    <state width="881" height="181" key="GridCell.Tab.0.right" timestamp="1583013976249">
       <screen x="70" y="27" width="1850" height="1053" />
     </state>
-    <state width="871" height="269" key="GridCell.Tab.0.right/70.27.1850.1053/1920.0.1920.1080@70.27.1850.1053" timestamp="1583007364367" />
+    <state width="881" height="181" key="GridCell.Tab.0.right/70.27.1850.1053/1920.0.1920.1080@70.27.1850.1053" timestamp="1583013976249" />
   </component>
 </project>

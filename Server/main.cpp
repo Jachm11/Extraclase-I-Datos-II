@@ -45,7 +45,10 @@ int main() {
 
     if (clt_socket == -1) {
         cerr << "Promeblemas con el cliente";
+    } else{
+        cout << "Conexion con cliente establecida exitosamente!\n";
     }
+
 
     char buffer [4096] = {0};
 
@@ -53,7 +56,7 @@ int main() {
         memset(buffer,0,4096);
         int bytesRecv = recv(clt_socket,buffer,4096,0);
         if (bytesRecv == -1){
-            cerr << "Hubo un error de coneccion" << endl;
+            cerr << "Hubo un error de conexion" << endl;
             break;
         }
 
@@ -63,7 +66,11 @@ int main() {
         }
         cout << string(buffer, 0 , bytesRecv) << endl;
 
+        send(clt_socket,buffer,bytesRecv -1, 0 );
+
     }
+
+    close(clt_socket);
 
     return 0;
 }

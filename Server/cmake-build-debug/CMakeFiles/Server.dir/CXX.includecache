@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/jachm/Documents/TEC/Datos II/Extraclase I/Server/main.cpp
+/home/jachm/Documents/TEC/Datos II/Extraclase I/Extraclase I Datos II/Server/main.cpp
 iostream
 -
 sys/socket.h

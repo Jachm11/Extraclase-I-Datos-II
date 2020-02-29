@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/jachm/Documents/TEC/Datos II/Extraclase I/Server/main.cpp" "/home/jachm/Documents/TEC/Datos II/Extraclase I/Server/cmake-build-debug/CMakeFiles/Server.dir/main.cpp.o"
+  "/home/jachm/Documents/TEC/Datos II/Extraclase I/Extraclase I Datos II/Server/main.cpp" "/home/jachm/Documents/TEC/Datos II/Extraclase I/Extraclase I Datos II/Server/cmake-build-debug/CMakeFiles/Server.dir/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
