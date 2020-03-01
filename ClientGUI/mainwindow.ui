@@ -69,7 +69,7 @@
    <widget class="QLabel" name="cam">
     <property name="geometry">
      <rect>
-      <x>960</x>
+      <x>950</x>
       <y>440</y>
       <width>81</width>
       <height>21</height>
@@ -88,9 +88,9 @@
     <property name="geometry">
      <rect>
       <x>560</x>
-      <y>630</y>
-      <width>89</width>
-      <height>25</height>
+      <y>614</y>
+      <width>121</width>
+      <height>41</height>
      </rect>
     </property>
     <property name="text">
@@ -416,9 +416,14 @@ background-repeat: none;
      <rect>
       <x>210</x>
       <y>490</y>
-      <width>821</width>
+      <width>891</width>
       <height>81</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>30</pointsize>
+     </font>
     </property>
     <property name="text">
      <string/>

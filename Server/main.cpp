@@ -251,16 +251,17 @@ void printPath(int parent[], int j)
 
         printPath(parent, parent[j]);
 
-        path += to_string(j);
+        string gi = "-";
+        path += gi += to_string(j);
 }
 
 // A utility function used to print the solution
 string giveRoute(int dist[], int n, int parent[], int src, int V)
 {
     path = "";
-    string arw = "-->";
-    string spc = "  ";
-    string spc2 = "  ";
+    string arw = " --> ";
+    string spc = "                            ";
+    string spc2 = "                               ";
     printPath(parent, n);
     string Route = (to_string(src) += arw += to_string(n) += spc2 += to_string(dist[n]) += spc  += to_string(src) += path);
     return Route;
