@@ -1,4 +1,4 @@
-# Install script for directory: /home/jachm/Documents/TEC/Datos II/Extraclase I/Extraclase I Datos II
+# Install script for directory: /home/jachm/Documents/TEC/Datos II/Extraclase I/Extraclase I Datos II/Grafo
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/jachm/Documents/TEC/Datos II/Extraclase I/Extraclase I Datos II/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/jachm/Documents/TEC/Datos II/Extraclase I/Extraclase I Datos II/Grafo/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
