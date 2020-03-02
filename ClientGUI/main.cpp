@@ -10,8 +10,9 @@
 #include <string>
 using namespace std;
 
-
-
+///
+/// \brief reference code from: https://www.youtube.com/user/sloankelly
+///
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);

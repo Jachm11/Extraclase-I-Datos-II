@@ -18,8 +18,8 @@ using namespace std;
 
 
 //Puntero no inicializado (PNI)
-
-// A structure to represent a node in adjacency list
+//
+/// A structure to represent a node in adjacency list
 struct AdjListNode
 {
     int dest;
@@ -27,21 +27,21 @@ struct AdjListNode
     struct AdjListNode* next; //Puntero (NI) a otro dato de la estructura nodo llamado next
 };
 
-// A structure to represent an adjacency list
+/// A structure to represent an adjacency list
 struct AdjList
 {
     struct AdjListNode* head;  // pointer to head node of list
 };
 
-// A structure to represent a graph. A graph is an array of adjacency lists.
-// Size of array will be V (number of vertices in graph)
+/// A structure to represent a graph. A graph is an array of adjacency lists.
+/// Size of array will be V (number of vertices in graph)
 struct Graph
 {
     int V;
     struct AdjList* array; //PNI a la list. adj.
 };
 
-// A utility function to create a new adjacency list node
+/// A utility function to create a new adjacency list node
 struct AdjListNode* newAdjListNode(int dest, int weight)
 {
     struct AdjListNode* newNode = (struct AdjListNode*) malloc(sizeof(struct AdjListNode)); // Aloja el espacio en memoria para el nodo, newNode es un puntero
@@ -51,7 +51,7 @@ struct AdjListNode* newAdjListNode(int dest, int weight)
     return newNode;
 }
 
-// A utility function that creates a graph of V vertices
+/// A utility function that creates a graph of V vertices
 struct Graph* createGraph(int V)
 {
     struct Graph* graph = (struct Graph*) malloc(sizeof(struct Graph));
@@ -67,7 +67,7 @@ struct Graph* createGraph(int V)
     return graph;
 }
 
-// Adds an edge to an undirected graph
+/// Adds an edge to an undirected graph
 void addEdge(struct Graph* graph, int src, int dest, int weight)
 {
 
@@ -90,14 +90,14 @@ void addEdge(struct Graph* graph, int src, int dest, int weight)
 //                       _________________________________
 //______________________/ Estructuras para el Heap
 
-// Structure to represent a min heap node
+/// Structure to represent a min heap node
 struct MinHeapNode
 {
     int  v;
     int dist;
 };
 
-// Structure to represent a min heap
+///Structure to represent a min heap
 struct MinHeap
 {
     int size;      // Number of heap nodes present currently
@@ -106,7 +106,7 @@ struct MinHeap
     struct MinHeapNode **array; // aqui se crea un puntero a un puntero q apunta a un MinHeapNode
 };
 
-// A utility function to create a new Min Heap Node
+/// A utility function to create a new Min Heap Node
 struct MinHeapNode* newMinHeapNode(int v, int dist)
 {
     struct MinHeapNode* minHeapNode = (struct MinHeapNode*) malloc(sizeof(struct MinHeapNode));
@@ -115,7 +115,7 @@ struct MinHeapNode* newMinHeapNode(int v, int dist)
     return minHeapNode;
 }
 
-// A utility function to create a Min Heap
+///A utility function to create a Min Heap
 struct MinHeap* createMinHeap(int capacity)
 {
     struct MinHeap* minHeap = (struct MinHeap*) malloc(sizeof(struct MinHeap));
@@ -126,7 +126,7 @@ struct MinHeap* createMinHeap(int capacity)
     return minHeap;
 }
 
-// A utility function to swap two nodes of min heap. Needed for min heapify
+/// A utility function to swap two nodes of min heap. Needed for min heapify
 void swapMinHeapNode(struct MinHeapNode** a, struct MinHeapNode** b)
 {
     struct MinHeapNode* t = *a;
@@ -134,9 +134,9 @@ void swapMinHeapNode(struct MinHeapNode** a, struct MinHeapNode** b)
     *b = t;
 }
 
-// A standard function to heapify at given idx
-// This function also updates position of nodes when they are swapped.
-// Position is needed for decreaseKey()
+/// A standard function to heapify at given idx
+///This function also updates position of nodes when they are swapped.
+/// Position is needed for decreaseKey()
 void minHeapify(struct MinHeap* minHeap, int idx)
 {
     int smallest, left, right;
@@ -169,13 +169,13 @@ void minHeapify(struct MinHeap* minHeap, int idx)
     }
 }
 
-// A utility function to check if the given minHeap is empty or not
+/// A utility function to check if the given minHeap is empty or not
 int isEmpty(struct MinHeap* minHeap)
 {
     return minHeap->size == 0;
 }
 
-// Standard function to extract minimum node from heap
+/// Standard function to extract minimum node from heap
 struct MinHeapNode* extractMin(struct MinHeap* minHeap)
 {
     if (isEmpty(minHeap))
@@ -199,8 +199,8 @@ struct MinHeapNode* extractMin(struct MinHeap* minHeap)
     return root;
 }
 
-// Function to decrease dist value of a given vertex v. This function
-// uses pos[] of min heap to get the current index of node in min heap
+/// Function to decrease dist value of a given vertex v. This function
+/// uses pos[] of min heap to get the current index of node in min heap
 void decreaseKey(struct MinHeap* minHeap, int v, int dist)
 {
     // Get the index of v in  heap array
@@ -223,8 +223,8 @@ void decreaseKey(struct MinHeap* minHeap, int v, int dist)
     }
 }
 
-// A utility function to check if a given vertex
-// 'v' is in min heap or not
+/// A utility function to check if a given vertex
+/// 'v' is in min heap or not
 bool isInMinHeap(struct MinHeap *minHeap, int v)
 {
     if (minHeap->pos[v] < minHeap->size)
@@ -237,11 +237,12 @@ bool isInMinHeap(struct MinHeap *minHeap, int v)
 //____________/Dijkstra y otros
 
 
-// Function to print shortest
-// path from source to j
-// using parent array
+/// This variable holds the path made by djkstra
 string path;
 
+/// Function to print shortest
+/// path from source to j
+/// using parent array
 void printPath(int parent[], int j)
 {
     //string path;
@@ -255,7 +256,7 @@ void printPath(int parent[], int j)
         path += gi += to_string(j);
 }
 
-// A utility function used to print the solution
+/// A utility function used to make the solution a string
 string giveRoute(int dist[], int n, int parent[], int src, int V)
 {
     path = "";
@@ -270,8 +271,8 @@ string giveRoute(int dist[], int n, int parent[], int src, int V)
 
 
 
-// The main function that calulates distances of shortest paths from src to all
-// vertices. It is a O(ELogV) function
+///The main function that calulates distances of shortest paths from src to all
+///vertices. It is a O(ELogV) function
 string dijkstra(Graph *graph, int src, int stp)
 {
     int V = graph->V;// Get the number of vertices in graph
@@ -337,6 +338,9 @@ string dijkstra(Graph *graph, int src, int stp)
 //              ____________________________________
 //_____________/ Creacion del socket y funcion main
 
+///Referece code from: https://www.geeksforgeeks.org/dijkstras-algorithm-for-adjacency-list-representation-greedy-algo-8/
+/// and https://www.youtube.com/user/sloankelly
+/// Modified by: Jose Alejandro Chavarria Madriz
 int main() {
 
     // create the graph

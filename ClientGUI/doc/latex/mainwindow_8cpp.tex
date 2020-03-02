@@ -1,0 +1,122 @@
+\hypertarget{mainwindow_8cpp}{}\doxysection{Client\+G\+U\+I/mainwindow.cpp File Reference}
+\label{mainwindow_8cpp}\index{ClientGUI/mainwindow.cpp@{ClientGUI/mainwindow.cpp}}
+{\ttfamily \#include \char`\"{}mainwindow.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}ui\+\_\+mainwindow.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$Q\+Application$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$sys/socket.\+h$>$}\newline
+{\ttfamily \#include $<$sys/types.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include $<$netdb.\+h$>$}\newline
+{\ttfamily \#include $<$arpa/inet.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{mainwindow_8cpp_a25ef8bb5d68bf79ec844209c51b26c2c}{socket\+Exe}} ()
+\begin{DoxyCompactList}\small\item\em socket\+Exe es la funcion encargada de crear el socket de cliente y conectarlo al sevidor \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{mainwindow_8cpp_a3ae453ebd113aa3734fd6616d2283658}{send\+Msg}} (int in, int out)
+\begin{DoxyCompactList}\small\item\em send\+Msg \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{mainwindow_8cpp_ae44f76169d254e514996d9175c025fad}{clt\+\_\+socket}}
+\begin{DoxyCompactList}\small\item\em clt\+\_\+socket Varaibe que guarda la direccion del socket \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{mainwindow_8cpp_a93a91ccc81df8204c8760c9f8fc3bdc4}{unconnected}} = true
+\begin{DoxyCompactList}\small\item\em unconnected Boleano para saber si la conexion ya fue establecida \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{mainwindow_8cpp_a03c996f9fcf0e10baeb3e700be0c409a}{active}} = false
+\begin{DoxyCompactList}\small\item\em active El primer veritece fue seleccionado \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{mainwindow_8cpp_a16d981023742d3bd53f1385790714190}{from}}
+\begin{DoxyCompactList}\small\item\em from De que vertice voy \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{mainwindow_8cpp_ac0ed249f3db34b8135fd2717bda56844}{to}}
+\begin{DoxyCompactList}\small\item\em to A que vertice voy \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{mainwindow_8cpp_a3ae453ebd113aa3734fd6616d2283658}\label{mainwindow_8cpp_a3ae453ebd113aa3734fd6616d2283658}} 
+\index{mainwindow.cpp@{mainwindow.cpp}!sendMsg@{sendMsg}}
+\index{sendMsg@{sendMsg}!mainwindow.cpp@{mainwindow.cpp}}
+\doxysubsubsection{\texorpdfstring{sendMsg()}{sendMsg()}}
+{\footnotesize\ttfamily string send\+Msg (\begin{DoxyParamCaption}\item[{int}]{in,  }\item[{int}]{out }\end{DoxyParamCaption})}
+
+
+
+send\+Msg 
+
+
+\begin{DoxyParams}{Parameters}
+{\em in} & Indica el vertice del que se quiere salir \\
+\hline
+{\em out} & Indica el vertice al que se quiere llegar \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+retorna la respuesta del servidor 
+\end{DoxyReturn}
+\mbox{\Hypertarget{mainwindow_8cpp_a25ef8bb5d68bf79ec844209c51b26c2c}\label{mainwindow_8cpp_a25ef8bb5d68bf79ec844209c51b26c2c}} 
+\index{mainwindow.cpp@{mainwindow.cpp}!socketExe@{socketExe}}
+\index{socketExe@{socketExe}!mainwindow.cpp@{mainwindow.cpp}}
+\doxysubsubsection{\texorpdfstring{socketExe()}{socketExe()}}
+{\footnotesize\ttfamily int socket\+Exe (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+socket\+Exe es la funcion encargada de crear el socket de cliente y conectarlo al sevidor 
+
+\begin{DoxyReturn}{Returns}
+retorna un entero que indica el estado del socket, -\/1 si falló, 1 si todo salió bien 
+\end{DoxyReturn}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{mainwindow_8cpp_a03c996f9fcf0e10baeb3e700be0c409a}\label{mainwindow_8cpp_a03c996f9fcf0e10baeb3e700be0c409a}} 
+\index{mainwindow.cpp@{mainwindow.cpp}!active@{active}}
+\index{active@{active}!mainwindow.cpp@{mainwindow.cpp}}
+\doxysubsubsection{\texorpdfstring{active}{active}}
+{\footnotesize\ttfamily bool active = false}
+
+
+
+active El primer veritece fue seleccionado 
+
+\mbox{\Hypertarget{mainwindow_8cpp_ae44f76169d254e514996d9175c025fad}\label{mainwindow_8cpp_ae44f76169d254e514996d9175c025fad}} 
+\index{mainwindow.cpp@{mainwindow.cpp}!clt\_socket@{clt\_socket}}
+\index{clt\_socket@{clt\_socket}!mainwindow.cpp@{mainwindow.cpp}}
+\doxysubsubsection{\texorpdfstring{clt\_socket}{clt\_socket}}
+{\footnotesize\ttfamily int clt\+\_\+socket}
+
+
+
+clt\+\_\+socket Varaibe que guarda la direccion del socket 
+
+\mbox{\Hypertarget{mainwindow_8cpp_a16d981023742d3bd53f1385790714190}\label{mainwindow_8cpp_a16d981023742d3bd53f1385790714190}} 
+\index{mainwindow.cpp@{mainwindow.cpp}!from@{from}}
+\index{from@{from}!mainwindow.cpp@{mainwindow.cpp}}
+\doxysubsubsection{\texorpdfstring{from}{from}}
+{\footnotesize\ttfamily int from}
+
+
+
+from De que vertice voy 
+
+\mbox{\Hypertarget{mainwindow_8cpp_ac0ed249f3db34b8135fd2717bda56844}\label{mainwindow_8cpp_ac0ed249f3db34b8135fd2717bda56844}} 
+\index{mainwindow.cpp@{mainwindow.cpp}!to@{to}}
+\index{to@{to}!mainwindow.cpp@{mainwindow.cpp}}
+\doxysubsubsection{\texorpdfstring{to}{to}}
+{\footnotesize\ttfamily int to}
+
+
+
+to A que vertice voy 
+
+\mbox{\Hypertarget{mainwindow_8cpp_a93a91ccc81df8204c8760c9f8fc3bdc4}\label{mainwindow_8cpp_a93a91ccc81df8204c8760c9f8fc3bdc4}} 
+\index{mainwindow.cpp@{mainwindow.cpp}!unconnected@{unconnected}}
+\index{unconnected@{unconnected}!mainwindow.cpp@{mainwindow.cpp}}
+\doxysubsubsection{\texorpdfstring{unconnected}{unconnected}}
+{\footnotesize\ttfamily bool unconnected = true}
+
+
+
+unconnected Boleano para saber si la conexion ya fue establecida 
+

@@ -1,0 +1,9 @@
+warning: source qtools is not a readable file or directory... skipping.
+warning: source libmd5 is not a readable file or directory... skipping.
+warning: source liblodepng is not a readable file or directory... skipping.
+warning: source libmscgen is not a readable file or directory... skipping.
+warning: source src is not a readable file or directory... skipping.
+warning: source vhdlparser is not a readable file or directory... skipping.
+error: Tag file `qtools_docs/qtools.tag' does not exist or is not a file. Skipping it...
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/jachm/Documents/TEC/Datos II/Extraclase I/Extraclase I Datos II/build-ClientGUI-Desktop_Qt_5_12_7_GCC_64bit-Debug/doxygen_docs/html/graph_legend.dot" -Tsvg -o "/home/jachm/Documents/TEC/Datos II/Extraclase I/Extraclase I Datos II/build-ClientGUI-Desktop_Qt_5_12_7_GCC_64bit-Debug/doxygen_docs/html/graph_legend.svg"'
+error: Problem extracting size from SVG file /home/jachm/Documents/TEC/Datos II/Extraclase I/Extraclase I Datos II/build-ClientGUI-Desktop_Qt_5_12_7_GCC_64bit-Debug/doxygen_docs/html/graph_legend.svg

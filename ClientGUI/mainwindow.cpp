@@ -23,11 +23,31 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
+///
+/// \brief clt_socket Varaibe que guarda la direccion del socket
+///
 int clt_socket;
+///
+/// \brief unconnected Boleano para saber si la conexion ya fue establecida
+///
 bool unconnected = true;
+///
+/// \brief active El primer veritece fue seleccionado
+///
 bool active = false;
+///
+/// \brief from De que vertice voy
+///
 int from;
+///
+/// \brief to A que vertice voy
+///
 int to;
+
+/**
+ * @brief socketExe es la funcion encargada de crear el socket de cliente y conectarlo al sevidor
+ * @return retorna un entero que indica el estado del socket, -1 si falló, 1 si todo salió bien
+ */
 
 int socketExe(){
 
@@ -61,6 +81,9 @@ int socketExe(){
         }
 }
 
+/**
+ * @brief MainWindow::on_v0_clicked cambia el valor de in o out segun el input anterior
+ */
 
 void MainWindow::on_v0_clicked()
 {
@@ -76,6 +99,9 @@ void MainWindow::on_v0_clicked()
     }
 }
 
+/**
+ * @brief MainWindow::on_v1_clicked cambia el valor de in o out segun el input anterior
+ */
 void MainWindow::on_v1_clicked()
 {
     if(!active){
@@ -90,6 +116,9 @@ void MainWindow::on_v1_clicked()
     }
 
 }
+/**
+ * @brief MainWindow::on_v2_clicked cambia el valor de in o out segun el input anterior
+ */
 
 void MainWindow::on_v2_clicked()
 {
@@ -105,6 +134,10 @@ void MainWindow::on_v2_clicked()
     }
 }
 
+/**
+ * @brief MainWindow::on_v3_clicked cambia el valor de in o out segun el input anterior
+ */
+
 void MainWindow::on_v3_clicked()
 {
     if(!active){
@@ -118,6 +151,10 @@ void MainWindow::on_v3_clicked()
         to = 3;
     }
 }
+
+/**
+ * @brief MainWindow::on_v4_clicked cambia el valor de in o out segun el input anterior
+ */
 
 void MainWindow::on_v4_clicked()
 {
@@ -133,7 +170,9 @@ void MainWindow::on_v4_clicked()
     }
 
 }
-
+/**
+ * @brief MainWindow::on_v5_clicked cambia el valor de in o out segun el input anterior
+ */
 void MainWindow::on_v5_clicked()
 {
     if(!active){
@@ -147,6 +186,9 @@ void MainWindow::on_v5_clicked()
         to = 5;
     }
 }
+/**
+ * @brief MainWindow::on_v6_clicked cambia el valor de in o out segun el input anterior
+ */
 
 void MainWindow::on_v6_clicked()
 {
@@ -162,6 +204,9 @@ void MainWindow::on_v6_clicked()
     }
 }
 
+/**
+ * @brief MainWindow::on_v7_clicked cambia el valor de in o out segun el input anterior
+ */
 void MainWindow::on_v7_clicked()
 {
     if(!active){
@@ -176,6 +221,9 @@ void MainWindow::on_v7_clicked()
     }
 }
 
+/**
+ * @brief MainWindow::on_v8_clicked cambia el valor de in o out segun el input anterior
+ */
 void MainWindow::on_v8_clicked()
 {
     if(!active){
@@ -190,6 +238,12 @@ void MainWindow::on_v8_clicked()
     }
 }
 
+/**
+ * @brief sendMsg
+ * @param in Indica el vertice del que se quiere salir
+ * @param out Indica el vertice al que se quiere llegar
+ * @return retorna la respuesta del servidor
+ */
 string sendMsg(int in, int out){
 
         string inout = to_string(in) += to_string(out);
@@ -209,6 +263,10 @@ string sendMsg(int in, int out){
         cout << string(buffer,bytesReceived);
         return string(buffer);
 }
+
+/**
+ * @brief MainWindow::on_buscar_clicked si no se ha creado el socket lo crea y manda un mesaje al servidor, sino solo manda el mensaje
+ */
 
 void MainWindow::on_buscar_clicked()
 {
