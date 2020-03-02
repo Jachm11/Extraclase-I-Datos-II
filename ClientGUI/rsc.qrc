@@ -1,5 +1,6 @@
 <RCC>
-    <qresource prefix="/img">
-        <file>graph.jpg</file>
+    <qresource prefix="/img"/>
+    <qresource prefix="/">
+        <file>graph2_copy.jpg</file>
     </qresource>
 </RCC>

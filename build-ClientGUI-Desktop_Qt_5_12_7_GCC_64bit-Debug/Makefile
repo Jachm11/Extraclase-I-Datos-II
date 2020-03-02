@@ -212,6 +212,7 @@ DIST          = /home/jachm/Qt/5.12.7/gcc_64/mkspecs/features/spec_pre.prf \
 		/home/jachm/Qt/5.12.7/gcc_64/mkspecs/features/qt_config.prf \
 		/home/jachm/Qt/5.12.7/gcc_64/mkspecs/linux-g++/qmake.conf \
 		/home/jachm/Qt/5.12.7/gcc_64/mkspecs/features/spec_post.prf \
+		../ClientGUI/.qmake.stash \
 		/home/jachm/Qt/5.12.7/gcc_64/mkspecs/features/exclusive_builds.prf \
 		/home/jachm/Qt/5.12.7/gcc_64/mkspecs/features/toolchain.prf \
 		/home/jachm/Qt/5.12.7/gcc_64/mkspecs/features/default_pre.prf \
@@ -397,6 +398,7 @@ Makefile: ../ClientGUI/ClientGUI.pro /home/jachm/Qt/5.12.7/gcc_64/mkspecs/linux-
 		/home/jachm/Qt/5.12.7/gcc_64/mkspecs/features/qt_config.prf \
 		/home/jachm/Qt/5.12.7/gcc_64/mkspecs/linux-g++/qmake.conf \
 		/home/jachm/Qt/5.12.7/gcc_64/mkspecs/features/spec_post.prf \
+		.qmake.stash \
 		/home/jachm/Qt/5.12.7/gcc_64/mkspecs/features/exclusive_builds.prf \
 		/home/jachm/Qt/5.12.7/gcc_64/mkspecs/features/toolchain.prf \
 		/home/jachm/Qt/5.12.7/gcc_64/mkspecs/features/default_pre.prf \
@@ -572,6 +574,7 @@ Makefile: ../ClientGUI/ClientGUI.pro /home/jachm/Qt/5.12.7/gcc_64/mkspecs/linux-
 /home/jachm/Qt/5.12.7/gcc_64/mkspecs/features/qt_config.prf:
 /home/jachm/Qt/5.12.7/gcc_64/mkspecs/linux-g++/qmake.conf:
 /home/jachm/Qt/5.12.7/gcc_64/mkspecs/features/spec_post.prf:
+.qmake.stash:
 /home/jachm/Qt/5.12.7/gcc_64/mkspecs/features/exclusive_builds.prf:
 /home/jachm/Qt/5.12.7/gcc_64/mkspecs/features/toolchain.prf:
 /home/jachm/Qt/5.12.7/gcc_64/mkspecs/features/default_pre.prf:
@@ -640,7 +643,7 @@ compiler_rcc_clean:
 	-$(DEL_FILE) qrc_rsc.cpp
 qrc_rsc.cpp: ../ClientGUI/rsc.qrc \
 		/home/jachm/Qt/5.12.7/gcc_64/bin/rcc \
-		../ClientGUI/graph.jpg
+		../ClientGUI/graph2_copy.jpg
 	/home/jachm/Qt/5.12.7/gcc_64/bin/rcc -name rsc ../ClientGUI/rsc.qrc -o qrc_rsc.cpp
 
 compiler_moc_predefs_make_all: moc_predefs.h
@@ -1007,7 +1010,22 @@ mainwindow.o: ../ClientGUI/mainwindow.cpp ../ClientGUI/mainwindow.h \
 		/home/jachm/Qt/5.12.7/gcc_64/include/QtGui/qtouchdevice.h \
 		/home/jachm/Qt/5.12.7/gcc_64/include/QtWidgets/qtabwidget.h \
 		/home/jachm/Qt/5.12.7/gcc_64/include/QtGui/qicon.h \
-		ui_mainwindow.h
+		ui_mainwindow.h \
+		/home/jachm/Qt/5.12.7/gcc_64/include/QtCore/QVariant \
+		/home/jachm/Qt/5.12.7/gcc_64/include/QtWidgets/QApplication \
+		/home/jachm/Qt/5.12.7/gcc_64/include/QtWidgets/qapplication.h \
+		/home/jachm/Qt/5.12.7/gcc_64/include/QtCore/qcoreapplication.h \
+		/home/jachm/Qt/5.12.7/gcc_64/include/QtCore/qeventloop.h \
+		/home/jachm/Qt/5.12.7/gcc_64/include/QtWidgets/qdesktopwidget.h \
+		/home/jachm/Qt/5.12.7/gcc_64/include/QtGui/qguiapplication.h \
+		/home/jachm/Qt/5.12.7/gcc_64/include/QtGui/qinputmethod.h \
+		/home/jachm/Qt/5.12.7/gcc_64/include/QtWidgets/QLabel \
+		/home/jachm/Qt/5.12.7/gcc_64/include/QtWidgets/qlabel.h \
+		/home/jachm/Qt/5.12.7/gcc_64/include/QtWidgets/qframe.h \
+		/home/jachm/Qt/5.12.7/gcc_64/include/QtWidgets/QPushButton \
+		/home/jachm/Qt/5.12.7/gcc_64/include/QtWidgets/qpushbutton.h \
+		/home/jachm/Qt/5.12.7/gcc_64/include/QtWidgets/qabstractbutton.h \
+		/home/jachm/Qt/5.12.7/gcc_64/include/QtWidgets/QWidget
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mainwindow.o ../ClientGUI/mainwindow.cpp
 
 qrc_rsc.o: qrc_rsc.cpp 

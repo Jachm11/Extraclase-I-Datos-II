@@ -13,6 +13,9 @@
   <property name="windowTitle">
    <string>Djikstra Graph</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(46, 52, 54);</string>
+  </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QLabel" name="grafo">
     <property name="geometry">
@@ -27,22 +30,25 @@
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap resource="rsc.qrc">:/img/graph.jpg</pixmap>
+     <pixmap resource="rsc.qrc">:/graph2_copy.jpg</pixmap>
     </property>
    </widget>
    <widget class="QLabel" name="dir">
     <property name="geometry">
      <rect>
       <x>210</x>
-      <y>440</y>
-      <width>91</width>
-      <height>31</height>
+      <y>430</y>
+      <width>121</width>
+      <height>41</height>
      </rect>
     </property>
     <property name="font">
      <font>
-      <pointsize>14</pointsize>
+      <pointsize>17</pointsize>
      </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(255, 255, 255);</string>
     </property>
     <property name="text">
      <string>Dirección</string>
@@ -52,15 +58,18 @@
     <property name="geometry">
      <rect>
       <x>590</x>
-      <y>450</y>
-      <width>67</width>
-      <height>17</height>
+      <y>436</y>
+      <width>101</width>
+      <height>31</height>
      </rect>
     </property>
     <property name="font">
      <font>
-      <pointsize>14</pointsize>
+      <pointsize>17</pointsize>
      </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(255, 255, 255);</string>
     </property>
     <property name="text">
      <string>Costo</string>
@@ -70,15 +79,18 @@
     <property name="geometry">
      <rect>
       <x>950</x>
-      <y>440</y>
-      <width>81</width>
-      <height>21</height>
+      <y>430</y>
+      <width>101</width>
+      <height>31</height>
      </rect>
     </property>
     <property name="font">
      <font>
-      <pointsize>14</pointsize>
+      <pointsize>17</pointsize>
      </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(255, 255, 255);</string>
     </property>
     <property name="text">
      <string>Camino</string>
@@ -92,6 +104,10 @@
       <width>121</width>
       <height>41</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">alternate-background-color: rgb(114, 159, 207);
+background-color: rgb(52, 101, 164);</string>
     </property>
     <property name="text">
      <string>Buscar ruta</string>
@@ -386,6 +402,9 @@ background-repeat: none;
     <property name="cursor">
      <cursorShape>ArrowCursor</cursorShape>
     </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(255, 255, 255);</string>
+    </property>
     <property name="text">
      <string>De:</string>
     </property>
@@ -407,6 +426,9 @@ background-repeat: none;
     <property name="cursor">
      <cursorShape>ArrowCursor</cursorShape>
     </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(255, 255, 255);</string>
+    </property>
     <property name="text">
      <string>Hacia:</string>
     </property>
@@ -424,6 +446,9 @@ background-repeat: none;
      <font>
       <pointsize>30</pointsize>
      </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(255, 255, 255);</string>
     </property>
     <property name="text">
      <string/>
@@ -443,6 +468,9 @@ background-repeat: none;
       <pointsize>25</pointsize>
      </font>
     </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(255, 255, 255);</string>
+    </property>
     <property name="text">
      <string/>
     </property>
@@ -460,6 +488,9 @@ background-repeat: none;
      <font>
       <pointsize>25</pointsize>
      </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(255, 255, 255);</string>
     </property>
     <property name="text">
      <string/>
